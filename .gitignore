@@ -1,0 +1,12 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# PyInstaller files
+server_manager.spec
+dist/
+build/
+
+# Other files
+*.log
+server_config.json
