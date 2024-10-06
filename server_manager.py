@@ -45,6 +45,9 @@ def git_pull(world_folder):
     """Run git pull in the world folder."""
     try:
         subprocess.check_call(['git', '-C', world_folder, 'pull', 'origin', 'master'])
+
+        time.sleep(2)
+        messagebox.showinfo("Git Sync", "World folder synced with Git repository.")
     except subprocess.CalledProcessError as e:
         messagebox.showerror("Git Error", f"Git pull failed: {str(e)}")
 
@@ -108,7 +111,7 @@ def stop_server(server_path, start_button, stop_button):
     try:
         subprocess.call(['TASKKILL', '/F', '/IM', 'java.exe'])
 
-        time.sleep(5)
+        time.sleep(2)
         messagebox.showinfo("Server Stopped", "The Minecraft server has stopped.")
     
         # Commit and push world folder
